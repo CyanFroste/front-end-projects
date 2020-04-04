@@ -1,0 +1,21 @@
+.jumbotron{
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: 1fr minmax(auto, 70em) 1fr;
+}
+.jumbotron-content{
+    grid-column: 2/3;
+    box-sizing: border-box;
+    padding: 2em;
+    background-color: rgba($silver, 0.2);
+    text-align: center;
+
+    // h2::after{
+    //     content: '';
+    //     display: block;
+    //     height: 1px;
+    //     background-color: $midnightblue;
+    //     width: 10%;
+    //     margin: 1em auto 0;
+    // }
+}

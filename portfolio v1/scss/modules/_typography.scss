@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Oswald&display=swap');
+
+$titlefont: 'Cinzel Decorative', cursive;
+$bodyfont: 'Oswald', sans-serif;
+
+$letterspace: 10px;
+
+@mixin  title($fs, $ff: $titlefont, $ls: 0.3em, $color: $alizarin, $tt: uppercase, $lh: 1.2){
+    font-size: $fs;
+    font-family: $ff;
+    letter-spacing: $ls;
+    color: $color;
+    text-transform: $tt;
+    line-height: $lh;
+}
+

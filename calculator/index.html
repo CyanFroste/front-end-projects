@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Calculator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h2>CALCULATOR</h2>
+        <div class="container">
+            <div class="cal">
+                <div class="clear" onclick="clr()"></div>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="display" id="display">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="key" type="button" value="1" onclick="display('1')">
+                            <input class="key" type="button" value="2" onclick="display('2')">
+                            <input class="key" type="button" value="3" onclick="display('3')">
+                            <input class="key" type="button" value="+" onclick="display('+')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="key" type="button" value="4" onclick="display('4')">
+                            <input class="key" type="button" value="5" onclick="display('5')">
+                            <input class="key" type="button" value="6" onclick="display('6')">
+                            <input class="key" type="button" value="-" onclick="display('-')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="key" type="button" value="7" onclick="display('7')">
+                            <input class="key" type="button" value="8" onclick="display('8')">
+                            <input class="key" type="button" value="9" onclick="display('9')">
+                            <input class="key" type="button" value="*" onclick="display('*')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="key" type="button" value="." onclick="display('.')">
+                            <input class="key" type="button" value="0" onclick="display('0')">
+                            <input class="key" type="button" value="=" onclick="calculate()">
+                            <input class="key" type="button" value="/" onclick="display('/')">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

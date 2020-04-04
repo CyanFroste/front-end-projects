@@ -1,0 +1,29 @@
+@mixin container($width: 90%, $maxwidth: 70em ){
+    width: $width;
+    margin: 0 auto;
+    max-width: $maxwidth;
+}
+
+@mixin mobile($width: 54em){
+    @media (max-width: $width){
+        @content;
+    }
+}
+
+@mixin desktop($width: 54em){
+    @media (min-width: $width){
+        @content;
+    }
+}
+
+// not a mixin but oh, well
+
+@keyframes FadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes FadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}

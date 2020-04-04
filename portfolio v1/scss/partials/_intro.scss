@@ -1,0 +1,27 @@
+.intro{
+    background-image: url(../../assets/intro-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    
+    h1{
+       text-align: center;
+       @include title($fs: 2rem, $lh: 1.5, $color: $alizarin);
+       @include mobile{
+           @include title($fs: 1.2rem, $color: $alizarin, $lh: 1.5);
+       }
+       span{        
+            display: block;
+            @include title($fs: 5rem, $color: $midnightblue);
+            @include mobile{
+                @include title($fs: 3rem, $color: $midnightblue);
+            }
+            
+        }
+    }
+}

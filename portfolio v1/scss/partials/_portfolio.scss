@@ -1,0 +1,180 @@
+.portfolio{
+    text-align: center;
+    @include container;
+    margin-top: 40px;
+
+    h1{
+        padding-top: 40px;
+        margin-bottom: 80px;
+    }
+}
+
+
+.portfolio-item{
+    position: relative;
+    overflow: hidden;
+
+    // filter: blur(0px);
+    // transition: filter linear 2s;
+    
+    // &:hover img{
+    //     filter: blur(10px);
+    // }
+
+    figcaption{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($midnightblue, 0.7);
+        color: $clouds;
+        padding: 2em 0;
+        display: flex;
+        flex-direction: column;
+        transition: top ease-in-out 200ms;
+    }
+    &:focus figcaption,
+    &:hover figcaption{
+        top: 0;
+    }
+}
+.portfolio-title{
+    color: $clouds;
+    font-size: 1.8em;
+    @include mobile($width: 600px){
+        font-size: 1.4em;
+    }
+    margin-bottom: auto;
+
+    .featured &{
+        font-size: 3.6em;
+        @include mobile($width: 600px){
+            font-size: 2.4em;
+        }
+    }
+}
+
+.portfolio-desc{
+    display: none;
+
+    .featured &{
+        display: block;
+    }
+}
+
+.portfolio-link{
+    text-decoration: none;
+    color: $clouds;
+    fill: $clouds;
+}
+
+// grid design
+.portfolio-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include mobile{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.featured{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+.odditem{
+    @include mobile{
+        display: none;
+    }
+}
+
+// modal
+
+.portfolio-modal{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($midnightblue, 0.7);    
+    
+    // toggle 
+    display: none;
+
+    &.view-modal{
+        display: block;
+    }
+    
+    .pm-content-container{
+        
+        position: fixed;
+        background-color: $clouds;
+        box-sizing: border-box;
+
+        @include container($maxwidth: 42em);
+        top: 2em;
+        bottom: 2em;
+        left: 0;
+        right: 0;
+        
+        @include desktop($width: 78.125em){
+            @include container;
+            min-width: 70em;
+            height: 44em;
+            min-height: 44em;
+            margin: auto;
+                        
+        }
+               
+        .pm-content{
+            position: absolute;
+            top: 2em;
+            bottom: 2em;
+            left: 2em;
+            right: 2em;           
+            overflow-y: auto;  
+            h1, h2, h3, p{
+                margin: 0;
+                padding: 0;
+                margin-top: 1em;
+            }
+            p{
+                text-align: justify;
+            }
+
+            @include desktop($width: 78.125em){
+                display: grid;
+                overflow-y: auto;  
+                grid-template-columns: repeat(2, 1fr);
+                
+                gap: 2em;
+                img{
+                    align-self: flex-end;
+                    height: auto;
+                    width: 100%;
+                    margin: auto;                
+                }
+                div{
+                    align-self: start;
+                   
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                                       
+                }
+            }            
+        }
+        .modal-close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0;
+            width: 2em;
+            height: 2em;
+            border: 0;
+            cursor: pointer;
+            fill: $alizarin;
+            background: transparent;
+        }
+    }
+}

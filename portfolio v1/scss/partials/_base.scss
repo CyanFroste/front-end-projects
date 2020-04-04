@@ -1,0 +1,28 @@
+body{
+    color: $midnightblue;
+    background: $clouds;
+    font-family: $bodyfont;
+    line-height: 1.4;
+    font-size: 1rem;
+
+}
+img{
+    max-width: 100%;
+}
+h1, h2, p{
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h1{
+    @include title($fs: 3rem, $color: $midnightblue);
+    @include mobile{
+        @include title($fs: 1.6rem, $color: $midnightblue);
+    }
+}
+h2{
+    @include title($fs: 2rem);
+    @include mobile{
+        @include title($fs: 1.2rem, $color: $alizarin);
+    }
+}

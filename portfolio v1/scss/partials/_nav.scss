@@ -1,0 +1,84 @@
+.menu{
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    @include mobile{
+        top: .6em;
+        left: .6em;
+    }
+    background: transparent;
+    border: 0;
+    fill: $midnightblue;
+    cursor: pointer;
+}
+
+header{
+
+    nav{
+        
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+        z-index: 9;
+
+           
+        transform: translateX(-100%);        
+        transition: transform ease-in-out 200ms;
+        
+        .menu-close{
+            position: absolute;
+            right: 2em;
+            top: 2em;
+            @include mobile{
+                top: .6em;
+                right: .6em;
+            }
+            background: transparent;
+            border: 0;
+            color: $midnightblue;
+            cursor: pointer;
+        }
+        
+    
+        ul{ 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;           
+            justify-content: space-around;
+            text-align: center;
+            align-items: stretch;
+            background-color: rgba($alizarin, .2);
+            
+                
+            li{
+                // border: 2px $clouds solid;
+                a{
+                    text-decoration: none;
+                    @include title($fs: 1.4rem, $ff: $bodyfont, $color: $midnightblue);
+                    // @include mobile($width: 1470px){
+                    //     @include title($fs: 1.4rem, $ff: $bodyfont, $color: $midnightblue);
+                    // }
+                    @include mobile{
+                        @include title($fs: 1.1rem, $ff: $bodyfont, $color: $midnightblue);
+                    }
+
+                    line-height: 0;       
+                    padding: 2em 0;
+                    display: inline-block;
+                    width: 100%;                
+                          
+                }
+            }
+        }
+    }
+}
+
+.nav-open{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);    
+}
