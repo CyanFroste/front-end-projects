@@ -50,3 +50,17 @@ body{
 audio{
     display: none;
 }
+@media (max-width: 700px){
+    .control-palette{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .change{
+        margin-bottom: 10vh;
+    }
+}
