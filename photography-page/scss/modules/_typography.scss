@@ -1,0 +1,21 @@
+// fonts from google fonts
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,200&family=Oswald&family=Playfair+Display+SC&family=Playfair+Display:wght@500&family=Poiret+One&family=Raleway:wght@300;400&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+$oswald: 'Oswald', sans-serif;
+$bebasneue: 'Bebas Neue', cursive;
+$poiretone: 'Poiret One', cursive;
+$raleway: 'Raleway', sans-serif;
+$playfair: 'Playfair Display', serif;
+$playfairsc: 'Playfair Display SC', serif;
+$julius: 'Julius Sans One', sans-serif;
+
+// mixin that sets font properties
+@mixin  font($fs, $ff: $julius, $ls: 0.2rem, $color: $snow, $lh: 1.4, $fw: 400){
+    font-weight: $fw;
+    font-size: $fs;
+    font-family: $ff;
+    letter-spacing: $ls;
+    color: $color;
+    line-height: $lh;
+}

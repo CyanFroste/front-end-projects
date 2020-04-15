@@ -1,0 +1,226 @@
+// NAV TOGGLE
+
+.nav-toggle-wrap.visible{
+    opacity: 1;
+    pointer-events: all;
+}
+.nav-toggle-wrap{
+    // NAV TOGGLE WRAPPER DIMENSIONS
+    width: 60px; height: 60px;
+
+    position: fixed;
+    z-index: 10;
+    transform-style: preserve-3d;    
+    top: 5vh;    
+    opacity: 0;
+    pointer-events: none;
+    transition: transform ease-out 700ms, opacity ease-out 400ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: right;
+    
+
+    .nav-toggle{
+        
+        // NAV TOGGLE DIMENSIONS
+        width: 20px;
+        height: 20px;   
+        padding: 20px;
+
+        border-radius: 50%; 
+        background-color: $smokeyblack;        
+        display: flex;
+        position: absolute;
+        top: 0; left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        transform-origin: center;
+
+        span{
+            width: 100%;
+            height: 5%; 
+            background-color: $snow;
+        }
+
+        .nav-el-one.active{
+            // animation 1 used here
+            animation: animNavToggleEl1 ease-in-out forwards 0.6s;
+        }
+        .nav-el-two.active{            
+            transform-origin: center;
+            // animation 2 used here
+            animation: animNavToggleEl2 ease-in-out forwards 0.3s;
+        }
+        .nav-el-three.active{
+            // animation 3 used here
+            animation: animNavToggleEl3 ease-in-out forwards 0.6s;
+        }
+
+        .nav-el-one.inactive{
+            // animation 5 used here
+            animation: animNavToggleEl1Rev ease-in-out forwards 0.6s;
+        }
+        .nav-el-two.inactive{            
+            transform-origin: center;
+            // animation 6 used here
+            animation: animNavToggleEl2Rev ease-in-out forwards 1.2s;
+        }
+        .nav-el-three.inactive{
+            // animation 7 used here
+            animation: animNavToggleEl3Rev ease-in-out forwards 0.6s;
+        }
+        
+    }
+
+    .nav-toggle.active{
+        // animation 4 used here
+        animation: animNavToggleMain ease-in-out forwards 1.2s;
+    }
+    .nav-toggle.inactive{
+        // animation 8 used here
+        animation: animNavToggleMainRev ease-in-out forwards 1.2s;
+    }
+
+    // animation for the top line of hamburger nav toggler - animation 1
+    @keyframes animNavToggleEl1 {
+        0%{
+            transform: rotateZ(0deg);
+        }   
+        50%{
+            transform: rotateZ(90deg) translateX(0);
+        }
+        100%{
+            transform: rotateZ(90deg) translateX(47.5%);
+        }
+    }
+    // animation for the middle line of hamburger nav toggler - animation 2
+    @keyframes animNavToggleEl2 {
+        0%{
+            transform: scaleX(1);
+        }
+        100%{
+            transform: scaleX(0);
+        }
+    }
+    // animation for the middle line of hamburger nav toggler - animation 3
+    @keyframes animNavToggleEl3 {
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+            transform: translateY(-20*47.5%);
+        }
+    }
+    // animation for the whole of hamburger nav toggler - animation 4
+    @keyframes animNavToggleMain {
+        0%{
+            transform: rotateZ(0deg);
+        }
+        50%{
+            transform: rotateZ(0deg);
+        }
+        100%{
+            transform: rotateZ(45deg);
+        }
+    }
+
+    // REVERSING ANIMATIONS
+
+    // animation for the top line of hamburger nav toggler - animation 5
+    @keyframes animNavToggleEl1Rev {
+        0%{
+            transform: rotateZ(90deg) translateX(47.5%);        
+        }   
+        50%{
+            transform: rotateZ(90deg) translateX(0);
+        }
+        100%{
+            transform: rotateZ(0deg);
+        }
+    }
+    // animation for the middle line of hamburger nav toggler - animation 6
+    @keyframes animNavToggleEl2Rev {
+        0%{
+            transform: scaleX(0);
+        }
+        100%{
+            transform: scaleX(1);
+        }
+    }
+    // animation for the bottom line of hamburger nav toggler - animation 7
+    @keyframes animNavToggleEl3Rev {
+        0%{
+            transform: translateY(-20*47.5%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    // animation for the whole of hamburger nav toggler - animation 8
+    @keyframes animNavToggleMainRev {
+        0%{
+            transform: rotateZ(45deg);
+        }
+        50%{
+            transform: rotateZ(45deg);
+        }
+        100%{
+            transform: rotateZ(0deg);
+        }
+    }
+
+    .nav-inflater{
+        // nav toggler has a background that appears to be inflating - it's dimensions
+        width: 400px;
+        height: 400px;
+
+        background-color: $snow;
+        position: absolute;
+        border-radius: 50%;
+        transform-origin: center;
+        opacity: 0;
+        pointer-events: none;
+       
+    }
+    .nav-inflater.inflated{
+        // animation 9 used here
+        animation: navInflate ease-in-out forwards 1s;
+    }
+    .nav-inflater.deflated{
+        // animation 10 used here
+        animation: navDeflate ease-in-out forwards 1s;
+    }
+
+    // animation for inflating nav - animation 9
+    @keyframes navInflate {
+        0%{
+            transform: scale(1);
+            opacity: 0;
+        }
+        50%{
+            transform: scale(16);
+            opacity: 1;
+        }
+        100%{
+            transform: scale(16);
+            opacity: 0;
+        }
+    }
+    // animation for deflating nav - animation 10
+    @keyframes navDeflate {
+        0%{
+            transform: scale(16);
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+            
+        }
+        100%{
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+}

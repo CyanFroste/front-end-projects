@@ -1,0 +1,54 @@
+// mixin for making a div a container
+@mixin  fixcontainer($width: 90%, $maxwidth: 1400px) {
+    width: $width;
+    max-width: $maxwidth;
+    margin: auto;
+}
+
+// mixin for defining logo dimens
+@mixin  logo($width: 200px, $minwidth: 100px, $height: auto) {
+    width: $width;
+    height: $height;
+    min-width: $minwidth;
+}
+
+// mixin that sets bg of 'stories' gallery item div
+@mixin setnthbg($ele, $n,  $url, $itemname) {
+    #{$ele}:nth-child(#{$n}){
+        @if $url == none {
+            background-color: rgba($licorice, 0.7);
+        }
+        @else{
+            background-image: $url;
+        } 
+        grid-area: $itemname;
+    }
+}
+
+// mixin that sets bg of div inside 'services' mouse driven movable flex items
+@mixin setnthbgser($ele, $n, $url, $w, $h, $t, $l) {    
+    #{$ele}:nth-child(#{$n}){
+        @if $url == none {
+            background-color: $licorice;
+        }
+        @else{
+            background-image: $url;
+        }        
+        width: $w;
+        height: $h;     
+        top: $t;
+        left: $l;
+    }
+}
+
+// mixin for adding vignette, kinda shitty
+@mixin vignette{
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0; z-index: 5;
+        box-shadow: inset 0 0 2em 1em $smokeyblack;
+        pointer-events: none;
+    }
+}

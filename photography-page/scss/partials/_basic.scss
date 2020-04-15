@@ -1,0 +1,69 @@
+*{ 
+    // BE CAREFUL WITH THESE - changing HTML styles
+    // sets scrollbar invisible while still being able to scroll
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background-color: $smokeyblack;
+    color: $snow;
+    
+    // customizing the svgs. caution! only change fill values
+
+    .iris-logo-white{
+        .st0{fill: rgba($snow, 1);}
+        .st1{fill:none;stroke: rgba($snow, 1);
+        stroke-width:14;
+        stroke-miterlimit:10;}
+    }
+    .iris-logo-black{
+        .st0{fill: rgba($smokeyblack, 1);}
+        .st1{fill:none;stroke: rgba($smokeyblack, 1);
+        stroke-width:14;
+        stroke-miterlimit:10;}
+    }
+    .iris-white{
+        .st0{fill:rgba($snow, 1);}
+    }
+    .iris-black{
+        .st0{fill:rgba($smokeyblack, 1);}
+    }
+    ul{
+        margin: 0;
+        list-style-type: none;
+        padding: 0;    
+    }
+
+    blockquote{
+        @include font($fs: 1rem, $ff: $poiretone, $ls: 0.1rem, $lh: 1.4);
+        margin: 1em 0;
+        font-style: italic;
+    }
+    figure{ margin: 0; }
+
+    a{
+        text-decoration: none;
+        @include font($fs: 0.8rem, $ff: $julius, $ls: 0.1rem, $color: rgba($snow, 0.7), $lh: 1.4);
+        &:hover{
+            color: $snow;
+        }
+    }
+
+    h1, h2, p, strong{ margin: 0; }
+    
+    h1{
+        @include font($fs: 2.2rem, $ff: $julius, $ls: 0.5rem, $lh: 1.7);
+    }
+    h2{
+        @include font($fs: 2rem, $ff: $bebasneue, $ls: 0.5rem, $lh: 1.6);
+    }
+    p{
+        @include font($fs: 0.8rem, $ff: $montserrat, $ls: 0.1rem, $lh: 1.5, $fw: 300);
+    }
+    strong{
+        // @include font($fs: 1rem, $ff: $julius, $ls: 0.2rem, $color: $snow, $lh: 1.4);
+        @include font($fs: 1rem, $ff: $montserrat, $ls: 0.2rem, $color:  $snow , $lh: 1.5, $fw: 700);
+    }
+}

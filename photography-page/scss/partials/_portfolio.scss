@@ -1,0 +1,156 @@
+.portfolio{
+    z-index: 1;
+    .portfolio-container{
+        @include fixcontainer;   
+        height: 100vh;   
+        padding: 5vh 1em;          
+        box-sizing: border-box;
+        position: relative;
+        nav{            
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 5vh;
+            ul{
+                display: flex;     
+                flex-wrap: wrap;  
+                align-items: baseline; 
+                justify-content: flex-start;
+                li{                    
+                    padding-right: 5%;
+                }  
+                // add mobile media query here
+                // .libr{
+                //     flex-basis: 100%;
+                //     height: 0;
+                // }            
+            }
+        }
+       .portfolio-content{   
+            box-sizing: border-box; 
+            width: 100%;
+
+            // code to make items to fit inside a flex container hiding overflow and without wrapping it inside the available space
+            // basis of 'stories' section photo gallery
+            display: flex; 
+            // key
+            flex-wrap: nowrap; 
+            overflow: auto;  
+            position: relative; 
+
+            .pfpg{
+                
+                position: relative;
+                // key
+                width: 1368*4px;
+                height: 70vh;
+                max-height: 700px;
+                flex: 0 0 auto;
+                display: grid;                
+                transform-origin: center left;
+                transform: translateX(0);
+                transition: transform ease-out 400ms;
+                
+                // inserting images as backgrounds of div
+
+                @include setnthbg($ele: '.pf-item', $n: 1, $url: url('/assets/img/por-3.jpg'), $itemname: one); 
+                @include setnthbg($ele: '.pf-item', $n: 2, $url: url('/assets/img/wide-1.jpg'), $itemname: two);
+                @include setnthbg($ele: '.pf-item', $n: 3, $url: url('/assets/img/wide-2.jpg'), $itemname: three); 
+                @include setnthbg($ele: '.pf-item', $n: 4, $url: url('/assets/img/por-2.jpg'), $itemname: four);
+                @include setnthbg($ele: '.pf-item', $n: 5, $url: url('/assets/img/wide-3.jpg'), $itemname: five);
+                @include setnthbg($ele: '.pf-item', $n: 6, $url: none, $itemname: titleone);
+
+                @include setnthbg($ele: '.pf-item', $n: 7, $url: url('/assets/img/wide-4.jpg'), $itemname: six); 
+                @include setnthbg($ele: '.pf-item', $n: 8, $url: url('/assets/img/por-1.jpg'), $itemname: seven);
+                @include setnthbg($ele: '.pf-item', $n: 9, $url: url('/assets/img/wide-5.jpg'), $itemname: eight); 
+                @include setnthbg($ele: '.pf-item', $n: 10, $url: url('/assets/img/wide-6.jpg'), $itemname: nine);
+                @include setnthbg($ele: '.pf-item', $n: 11, $url: url('/assets/img/por-4.jpg'), $itemname: ten);
+                @include setnthbg($ele: '.pf-item', $n: 12, $url: none, $itemname: titletwo);
+               
+                @include setnthbg($ele: '.pf-item', $n: 13, $url: url('/assets/img/wide-7.jpg'), $itemname: eleven); 
+                @include setnthbg($ele: '.pf-item', $n: 14, $url: url('/assets/img/wide-8.jpg'), $itemname: twelve);
+                @include setnthbg($ele: '.pf-item', $n: 15, $url: url('/assets/img/por-5.jpg'), $itemname: thirteen); 
+                @include setnthbg($ele: '.pf-item', $n: 16, $url: url('/assets/img/wide-9.jpg'), $itemname: fourteen);
+                @include setnthbg($ele: '.pf-item', $n: 17, $url: url('/assets/img/por-6.jpg'), $itemname: fifteen);
+                @include setnthbg($ele: '.pf-item', $n: 18, $url: none, $itemname: titlethree);
+
+                @include setnthbg($ele: '.pf-item', $n: 19, $url: url('/assets/img/por-7.jpg'), $itemname: sixteen); 
+                @include setnthbg($ele: '.pf-item', $n: 20, $url: url('/assets/img/por-8.jpg'), $itemname: seventeen);
+                @include setnthbg($ele: '.pf-item', $n: 21, $url: url('/assets/img/wide-10.jpg'), $itemname: eighteen); 
+                @include setnthbg($ele: '.pf-item', $n: 22, $url: url('/assets/img/wide-11.jpg'), $itemname: ninteen);
+                @include setnthbg($ele: '.pf-item', $n: 23, $url: url('/assets/img/wide-12.jpg'), $itemname: twenty);
+                @include setnthbg($ele: '.pf-item', $n: 24, $url: none, $itemname: titlefour);
+                
+                // arranging those divs on grid
+                grid-template-areas: 
+                    'one titleone five four six seven eight ten eleven thirteen titlethree fifteen sixteen seventeen eighteen twenty'
+                    'one two three four titletwo seven nine ten twelve thirteen fourteen fifteen sixteen seventeen ninteen titlefour';
+
+            }
+            
+           
+            .pf-item{            
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;    
+                box-sizing: border-box;                 
+                padding: 1.4em;
+                display: flex; 
+                flex-direction: column;                
+                justify-content: flex-end;
+                a{ margin-top: auto; opacity: 0; }
+            }
+
+            .pfpg-title{
+                position: absolute;
+                height: 100%;
+                justify-content: flex-start;
+                h2{ margin-bottom: 0.4em; }
+                p{ text-align: justify; }
+            }
+
+            .pfpg-scroll{
+                width: 100%;
+                height: 100%;   
+                position: absolute;                
+                top: 0; left: 0; bottom: 0; right: 0;         
+                z-index: 4;
+                display: none;
+                overflow: scroll;
+                .pf-scrolltrack{
+                    width: 100%;
+                }
+            }
+       }
+
+       .pf-controls{
+            width: 100%;
+            height: 7vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // TO ADD PROGRESSBAR TRACER
+            // .pf-progressbar{
+            //     width: 100%;
+            //     border-top: 1px solid $jet;
+            //     &::before{
+            //         content: '';
+            //         display: block;
+            //         margin-top: -1px;
+            //         border-top: 1px solid $snow;
+            //         width: 20%;
+            //     }
+            // }            
+            .pf-progressbar{
+                height: 1px;
+                transform-origin: left;
+                transform: scaleX(1);
+                transition: transform ease-out 400ms;
+                background-color: $snow;
+            }
+            .pf-progressbar.init{
+                transform: scaleX(0);
+                transition: transform ease-out 2s;
+            } 
+        }
+   }
+}

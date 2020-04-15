@@ -1,0 +1,110 @@
+.services{
+    z-index: 1;
+    .services-container{
+        @include fixcontainer;
+        height: 100vh;
+        padding: 5vh 1em;          
+        box-sizing: border-box;  
+        
+        nav{            
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 5vh;
+            ul{
+                display: flex;     
+                flex-wrap: wrap;  
+                align-items: baseline; 
+                justify-content: flex-start;
+                li{                    
+                    padding-right: 5%;
+                }  
+                // add mobile media query here
+                // .libr{
+                //     flex-basis: 100%;
+                //     height: 0;
+                // }            
+            }
+        }        
+        .services-content{
+            height: 77vh;            
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;            
+            justify-content: center;
+            align-items: center;
+            
+            @include vignette;
+
+            .ser-desc{
+                padding: 1.4em;
+                height: 470px;
+                width: 100%;
+                max-width: 400px;
+                position: absolute;
+                margin-top: 70px;
+                z-index: 4;
+                box-sizing: border-box;
+                background-color: rgba($licorice, 0.7);
+                text-align: center;
+                h2{
+                    margin-bottom: 0.4em;
+                }
+                p{
+                    text-align: justify; 
+                    margin-bottom: 4em;                   
+                }
+                
+            }
+            .service{
+                min-height: 1800px;
+                min-width: 1800px; 
+                transform-origin: center;
+                transform-style: preserve-3d;
+                position: absolute;
+                transform: translate(0, 0);
+                
+            }
+            .serone{
+                z-index: 3;
+                // setting images on the FG div - positons figured out using adobe illustrator
+
+                @include setnthbgser($ele: '.ser-box', $n: 1, $url: url(/assets/img/wide-1.jpg), $w: 456px, $h: 256.5px, $l: -80.808 + 216px, $t: -21.963 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 2, $url: url(/assets/img/wide-2.jpg), $w: 450px, $h: 253.125px, $l: 528.778 + 216px, $t: -146.684 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 3, $url: url(/assets/img/por-1.jpg), $w: 260px, $h: 462.222px, $l: 1051.342 + 216px, $t: -51.3 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 4, $url: url(/assets/img/por-2.jpg), $w: 270px, $h: 480px, $l: 158.437 + 216px, $t: 384.052 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 5, $url: url(/assets/img/wide-3.jpg), $w: 500px, $h: 281.25px, $l: 943.303 + 216px, $t: 540.995 + 523);
+
+            }
+            .sertwo{
+                z-index: 2;
+                opacity: 0.4;
+                // setting images on the BG div - positons figured out using adobe illustrator
+
+                @include setnthbgser($ele: '.ser-box', $n: 1, $url: url(/assets/img/por-3.jpg), $w: 224px, $h: 346.457px, $l: 204.355 + 216px, $t: -169.363 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 2, $url: url(/assets/img/por-4.jpg), $w: 204px, $h: 328.85px, $l: 809.018 + 216px, $t: -202.344 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 3, $url: url(/assets/img/wide-4.jpg), $w: 340px, $h: 201.351px, $l: -92.158 + 216px, $t: 442.575 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 4, $url: url(/assets/img/wide-5.jpg), $w: 428px, $h: 223.272px, $l: 978.778 + 216px, $t: 234.537 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 5, $url: url(/assets/img/wide-6.jpg), $w: 355px, $h: 199.688px, $l: 351.042 + 216px, $t: 722.268 + 523);
+
+                @include setnthbgser($ele: '.ser-box', $n: 6, $url: url(/assets/img/por-5.jpg), $w: 200px, $h: 324px, $l: 784.023 + 216px, $t: 686.315 + 523);
+            }
+            .ser-box{
+                position: absolute;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center; 
+                filter: saturate(0);   
+            }
+        }
+    }
+}
+    

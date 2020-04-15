@@ -1,0 +1,134 @@
+.main-menu.inflated{
+    // animation 1 used here
+    animation: menuInflate ease-in-out forwards 1s;
+}
+.main-menu.deflated{
+    // animation 2 used here
+    animation: menuDeflate ease-in-out forwards 1s;
+}
+.main-menu{
+   
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 8;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba($color: $snow, $alpha: 1);
+
+    .menu-content{
+        @include fixcontainer;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 5vh 1em;
+        display: grid;        
+        grid-template-columns: 1fr 1fr;
+                
+        h2, p{ color: $smokeyblack; }
+
+        .menu-preview{
+            background: center no-repeat;
+            background-size: cover;
+            background-image: url(/assets/img/por-12.jpg);            
+        }
+        .menu-preview.inflated{
+            // animation 3 used here
+            animation: menuPreSlide ease-out forwards 1.2s;
+        }
+        
+        nav.inflated{
+            // animation 4 used here
+            animation: menuNavSlide ease-out forwards 1.6s;
+        } 
+        nav{
+            background-color: $snow;
+            display: flex;
+            flex-direction: column;
+            padding-left: 2em;
+            justify-content: flex-end;
+            
+            .menu-page-links{
+                margin-bottom: 5vh;
+                a{
+                    @include font($fs: 2rem, $ff: $bebasneue, $color: rgba($smokeyblack, 0.7), $ls: 0.5rem, $lh: 1.6);                  
+                }
+            }
+            .menu-social-links{
+                margin-bottom: 5vh;
+                display: flex; 
+                justify-content: space-around;                
+                li{
+                    display: inline-block;
+                }
+            }            
+            a{ 
+                color: rgba($smokeyblack, 0.7);
+                &:hover{
+                    color: $smokeyblack;
+                }
+            }            
+            svg{
+                @include logo($width: 28%);    
+                padding-top: 40px;
+                padding-right: 40px;
+                align-self: flex-end; 
+                justify-self: flex-start;
+                margin-bottom: auto;            
+            }
+        }
+    }
+}
+
+// animation for menu inflation - animation 1
+@keyframes menuInflate {
+    0%{
+        opacity: 0;
+        pointer-events: none;
+    }
+    50%{
+        opacity: 0;
+        pointer-events: none;
+    }
+    51%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+// animation for menu deflation - animation 2
+@keyframes menuDeflate {
+    0%{
+        opacity: 1;
+        pointer-events: none;
+    }
+    50%{
+        opacity: 1; 
+    }51%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+// animation for menu preview image slideIn - animation 3
+@keyframes menuPreSlide {
+    0%{
+        transform: translateX(-40%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+// animation for menu links slideIn - animation 4
+@keyframes menuNavSlide {
+    0%{
+        transform: translateX(-80%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
