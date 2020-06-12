@@ -4,3 +4,4 @@
 - portfolio website design v1
 - tsuzumi demon
 - photography page
+- a polls app using sveltejs
