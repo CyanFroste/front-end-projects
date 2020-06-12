@@ -1,0 +1,20 @@
+{
+	"polls": [
+		{
+			"topic": "Who'll win Wulf-Pro-Trix?",
+			"optionOne": "Cyan",
+			"optionTwo": "Wulf",
+			"optionOneVotes": 0,
+			"optionTwoVotes": 0,
+			"id": 1
+		},
+		{
+			"topic": "Who's the best Gamer?",
+			"optionOne": "Cyan",
+			"optionTwo": "Cyan",
+			"optionOneVotes": 8,
+			"optionTwoVotes": 2,
+			"id": 2
+		}
+	]
+}

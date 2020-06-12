@@ -1,0 +1,12 @@
+main.svelte-c4nr9f{max-width:960px;margin:40px auto}
+form.svelte-mktr1m{width:400px;margin:0 auto;text-align:center}.form-field.svelte-mktr1m{margin:20px auto}input.svelte-mktr1m{width:100%;border-radius:5px}label.svelte-mktr1m{margin:10px auto;text-align:start}.error.svelte-mktr1m{color:#FF4343}
+footer.svelte-1xerjer{display:flex;flex-direction:column;align-items:center;justify-content:center}p.svelte-1xerjer{border-top:1px solid #B0B0B0;color:#B0B0B0;padding:10px 40px}
+header.svelte-f5ml6r{display:flex;align-items:center;justify-content:center;background-color:#FF4343
+	}h1.svelte-f5ml6r{padding:10px;color:#FFF}
+h3.svelte-1ngol5e{margin:0 auto;color:#404040}p.svelte-1ngol5e{margin-top:7px;font-size:10pt;color:#404040}.option.svelte-1ngol5e{background:#EEE;border-radius:5px;margin:10px auto;height:42px;cursor:pointer;position:relative}.option.svelte-1ngol5e:hover{opacity:0.7}span.svelte-1ngol5e{display:inline-block;position:absolute;color:#404040;padding:10px 20px}.percent.svelte-1ngol5e{height:100%;border-radius:5px;box-sizing:border-box}.percent-one.svelte-1ngol5e{border-left:4px solid #18f2b2;background:rgba(24, 242, 178, 0.4)}.percent-two.svelte-1ngol5e{border-left:4px solid #FF4343;background:rgba(255, 67, 67, 0.4)}.delete-poll.svelte-1ngol5e{margin-top:40px;text-align:right}
+.poll-list.svelte-1hjiiwi{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+button.svelte-1ja6pa8{border:0;cursor:pointer;border-radius:5px;font-weight:bold;padding:6px 12px;text-transform:uppercase}.primary.svelte-1ja6pa8{background-color:#FF4343;color:#FFF}.primary.inverse.svelte-1ja6pa8{background-color:#FFF;color:#FF4343;padding:5px 11px;border:1px solid #FF4343}
+.card.svelte-aszkab{background-color:#FFF;padding:20px;border-radius:5px;box-shadow:0px 2px 4px rgba(0,0,0,0.1)}
+.tabs.svelte-18fuo2i{margin-bottom:40px}ul.svelte-18fuo2i{list-style-type:none;display:flex;padding:0;justify-content:center}li.svelte-18fuo2i{font-size:14pt;color:#404040;font-weight:600;margin:0 20px;padding:10px;cursor:pointer}.active.svelte-18fuo2i{color:#ff4343;border-bottom:1px solid #ff4343}
+
+/*# sourceMappingURL=bundle.css.map */
