@@ -1,0 +1,294 @@
+/* 	1em font size = 1x parent's font size
+		1em padding, margin etc. = 1x this element's font size
+		1rem = 1x root element's font size
+		rem based padding, margin etc. are constant
+*/
+
+// variables
+$accent: #2196f3;
+$text: #404040;
+$white: #fff;
+$bg: #eee;
+$muted: #707070;
+//
+
+* {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	font-weight: normal;
+	color: $text;
+}
+
+body {
+	//	explicitly declaring font size
+	font-size: 16px;
+	margin: 4em; // 4 x 16 = 64 margin
+	background-color: $bg;
+}
+:root {
+	//	explicitly declaring font size for rem
+	font-size: 16px;
+}
+
+// anchor || links
+a {
+	text-decoration: none;
+	color: $accent;
+	transition: all 200ms linear;
+	&:hover {
+		color: darken($color: $accent, $amount: 20%);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+//
+
+// button
+button.btn {
+	font-size: 1em;
+	padding: 1em 2em;
+	margin: 1em;
+	text-transform: uppercase;
+	background-color: $accent;
+	color: $white;
+	border: 0;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+	transition: all 200ms linear;
+	&:focus {
+		outline: none;
+	}
+}
+
+.ripple {
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.6);
+	position: absolute;
+	transform: scale(0);
+	animation: ripple 1s linear;
+}
+//
+
+// card
+div.card {
+	width: 300px;
+
+	margin: 1em;
+	min-height: 200px;
+	min-width: 200px;
+	display: inline-block;
+	padding: 1em;
+	background-color: $white;
+	border: 0;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+	&:focus {
+		outline: none;
+	}
+}
+.card .ripple {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.card-header {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	padding-bottom: 1em;
+}
+.card-header .card-title {
+	font-size: 2em;
+	margin: 0;
+}
+.card-body {
+	display: flex;
+	p {
+		color: $muted;
+	}
+}
+.card-footer {
+	padding-top: 1em;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+//
+
+// input
+// default textbox
+/* values
+	5px = .3125em
+	10px = .625em
+	14px = .875em
+	18px = 1.125em
+	20px = 1.25em
+*/
+.textbox.default {
+	margin: 1em;
+	margin-top: 3em;
+	position: relative;
+
+	// text field || input
+	.textfield {
+		width: 300px;
+		background-color: transparent;
+		font-size: 1.125em;
+		padding: 0.625em 0.625em 0.625em 0.3125em;
+		display: block;
+		border: 0;
+		border-bottom: 1px solid $muted;
+		&:focus {
+			outline: none;
+		}
+	}
+	// label
+	label {
+		color: $muted;
+		font-size: 1.125em;
+		font-weight: normal;
+		position: absolute;
+		pointer-events: none;
+		left: 0.3125em;
+		top: 0.625em;
+		transition: 200ms ease all;
+	}
+	// label style when textfield is focused
+	// selecting the next sibling - label
+	.textfield:focus ~ label,
+	.textfield:valid ~ label {
+		top: -1.25em;
+		font-size: 0.875em;
+		color: $accent;
+	}
+
+	// border animation using a span
+	.bar {
+		position: relative;
+		display: block;
+		width: 300px;
+
+		&:before,
+		&:after {
+			content: "";
+			height: 2px;
+			width: 0;
+			bottom: 1px;
+			position: absolute;
+			background: $accent;
+			transition: 200ms ease all;
+		}
+		&:before {
+			left: 50%;
+		}
+		&:after {
+			right: 50%;
+		}
+	}
+
+	// border animation when textfield is focused
+	.textfield:focus ~ .bar:before,
+	.textfield:focus ~ .bar:after {
+		width: 50%;
+	}
+}
+
+// outlined textbox
+/* values
+	5px = .3125em
+	10px = .625em
+	14px = .875em
+	18px = 1.125em
+	20px = 1.25em
+*/
+.textbox.outlined {
+	margin: 1em;
+	margin-top: 3em;
+	position: relative;
+
+	// text field || input
+	.textfield {
+		width: 300px;
+		background-color: transparent;
+		font-size: 1.125em;
+		padding: 1em;
+		display: block;		
+		border: 1px solid $muted;
+		border-radius: .125em;
+		&:focus {
+			outline: none;
+		}
+	}
+	// label
+	label {
+		color: $muted;
+		font-size: 1.125em;
+		font-weight: normal;
+		
+		pointer-events: none;
+		
+		transition: 200ms ease all;	
+	}
+
+	.container{
+		position: absolute;
+		top: 0em;
+		left: 0em;
+		background-color: $accent;
+		display: inline-block;		
+		height: 100%;
+		width: 300px;
+		display: flex;
+	}
+	.before, .after{
+		height: 100%;
+		background-color: $muted;
+		
+	}
+
+	// label style when textfield is focused
+	// selecting the next sibling - label
+	.textfield:focus ~ label,
+	.textfield:valid ~ label {
+		top: -1.25em;
+		font-size: 0.875em;
+		color: $accent;
+	}
+
+	// border animation using a span
+	.bar {
+		position: relative;
+		display: block;
+		width: 300px;
+
+		&:before,
+		&:after {
+			content: "";
+			height: 2px;
+			width: 0;
+			bottom: 1px;
+			position: absolute;
+			background: $accent;
+			transition: 200ms ease all;
+		}
+		&:before {
+			left: 50%;
+		}
+		&:after {
+			right: 50%;
+		}
+	}
+
+	// border animation when textfield is focused
+	.textfield:focus ~ .bar:before,
+	.textfield:focus ~ .bar:after {
+		width: 50%;
+	}
+}
+
+// animations
+
+// ripple
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
