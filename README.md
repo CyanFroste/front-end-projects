@@ -1,7 +1,8 @@
 # Front-End-Study
 - calculator
-- snowflakes generated on html canvas using js
+- html5 canvas
 - portfolio website design v1
 - tsuzumi demon
 - photography page
 - a polls app using sveltejs
+- material components design
